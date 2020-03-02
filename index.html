@@ -18,6 +18,7 @@ There are many build automation softwares, like <a href="https://en.wikipedia.or
 For a complete list click <a href="https://en.wikipedia.org/wiki/List_of_build_automation_software">here</a>.
 <h2>GitHub Actions</h2>
 GitHub Actions help you automate your software development workflows in the same place you store code. You can write individual tasks, called actions, and combine them to create a custom workflow.<br/>
+Having your workflows and your automations bound to GitHub has many benefits, as for example, when you push corrupted code to the repository, the automatic build software can build it and test it and, upon seeing it's corrupted, dtop the push and don't let it get into the repository.<br/>
 GitHub Marketplace is where you can find, share, and use actions built by the GitHub community.<br/>
 You can also customize your project with open source actions shared in public repositories and use actions built by the GitHub Actions organization.<br/>
 The only downside is that Github and the community don't like Windows or C/C++ much, so you won't find as many actions already developed for you if you are using them instead of others.
@@ -35,7 +36,11 @@ All of them require their own specific files, with their own specific syntax, ju
 It still isn't a very good option for beginners.
 Here there's a <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions">workflow syntax guide for GitHub Actions</a> in case you want to try.
 <h3>CMake</h3>
-
+CMake is a build automation software that generates files for various build tools, such as Make, Ninja, Xcode and Visual Studio.<br/>
+It's a really well documented software, so it's easy to learn, via the official documentation or via online forums wher people help eachother with whichever doubt they may have.<br/>
+The only downside is that it's conceived to be creating the porjects on the same CMake, so it can get a little tricky when trying to use a project created from Visual Studio, for example, but you can get around it pretty easily.
+<h2>More uses for GitHub Actions</h2>
+You can 
 
 
 
