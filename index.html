@@ -1,0 +1,63 @@
+---
+layout: default
+---
+<h1>Automated Builds CI/CD </h1>
+I am Pol Galan, student of the <a href="https://www.citm.upc.edu/ing/estudis/graus-videojocs/">Bachelor's Degree in Video Games by UPC at CITM</a>. This content is generated for the second year's subject Project II, under supeervision of lecturer <a href="https://www.linkedin.com/in/mgarrigo/">Marc Garrigó</a>.
+<h2>What is CI/CD?</h2>
+<h3>Continuous integration</h3>
+Continuous integration (CI) is a software practice that requires frequently committing code to a repository. Committing code more often can detect errors sooner and reduce the amount of code a developer needs to debug when finding the source of an error. This is great for developers, so they can spend more time writing code and less time debugging errors or resolving merge conflicts.<br/>
+
+When you commit code to your repository, you can continuously build and test that code to make sure that the commit doesn't introduce any errors.<br/>
+
+Building and testing code requires a server. You can build and test locally before pushing code, or you can use a CI server that checks for new code commits in a repository.
+<h3>Continuous deployment</h3>
+Continuous deployment (CD) builds on continuous integration. When new code is committed and passes the CI tests, the code is automatically deployed to production. You can create custom CD workflows to automatically deploy your code to any cloud, self-hosted service, or platform from your repository, which saves developers time by automating the deployment process and deploying tested, stable code changes more quickly to your customers.
+<h2>Automated Builds</h2>
+Build automation is the process of automating the creation of a software build and the associated processes including: compiling computer source code into binary code, packaging binary code, and running automated tests.<br/>
+There are many build automation softwares, like <a href="https://en.wikipedia.org/wiki/Make_(software)#Modern_versions">GNU make</a>, <a href="https://en.wikipedia.org/wiki/Make_(software)#Modern_versions">make</a>, <a href="https://en.wikipedia.org/wiki/CMake">CMake</a>, <a href="https://en.wikipedia.org/wiki/GNU_Build_System">GNU Build System</a>...<br/>
+For a complete list click <a href="https://en.wikipedia.org/wiki/List_of_build_automation_software">here</a>.
+<h2>GitHub Actions</h2>
+GitHub Actions help you automate your software development workflows in the same place you store code. You can write individual tasks, called actions, and combine them to create a custom workflow.<br/>
+Having your workflows and your automations bound to GitHub has many benefits, as for example, when you push corrupted code to the repository, the automatic build software can build it and test it and, upon seeing it's corrupted, dtop the push and don't let it get into the repository.<br/>
+GitHub Marketplace is where you can find, share, and use actions built by the GitHub community.<br/>
+You can also customize your project with open source actions shared in public repositories and use actions built by the GitHub Actions organization.<br/>
+The only downside is that Github and the community don't like Windows or C/C++ much, so you won't find as many actions already developed for you if you are using them instead of others.
+<h3>What is a workflow?</h3>
+Workflows are custom automated processes that you can set up in your repository to build, test, package, release, or deploy any code project on GitHub.<br/>
+Workflows are made up of one or more jobs and can be scheduled or activated by events, like a push, a pull request or a fork.<br/>
+They are .yml or .yaml files
+<img src=https://github.com/pgalmor/Automated-Builds-CI-CD/blob/master/docs/annotated-workflow.png?raw=true></img>
+<h2>GitHub Actions starter workflow</h2>
+The starter workflow GitHub Actions gives you if you use C/C++ uses Make for the automated build. That means you code will now require a Makefile, which isn't quite difficult if your project is really simple, but gets pretty hard quite fast as the project gets bigger.<br/>
+For being a starter workflow it can get quite hard if you don't know what you are doing, and there isn't any specific documentation available on GitHub.<br/>
+But, ultimately, it's a simple workflow easy to implement and easy to use if you know what you are doing.
+<h3>Create our own workflow</h3>
+The upside of vreating your own workflow is that you can use whichever automation build you like, as long as it works with the language you are using on your code.<br/>
+All of them require their own specific files, with their own specific syntax, just as Make needed it's Makefile, to be able to build the code.<br/>
+It still isn't a very good option for beginners.
+Here there's a <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions">workflow syntax guide for GitHub Actions</a> in case you want to try.
+<h3>CMake</h3>
+CMake is a build automation software that generates files for various build tools, such as Make, Ninja, Xcode and Visual Studio.<br/>
+It's a really well documented software, so it's easy to learn, via the official documentation or via online forums wher people help eachother with whichever doubt they may have.<br/>
+The only downside is that it's conceived to be creating the porjects on the same CMake, so it can get a little tricky when trying to use a project created from Visual Studio, for example, but you can get around it pretty easily.
+<h2>More uses for GitHub Actions</h2>
+You can get to do practically everything with GitHub Actions, even without knowing much about creating your own workflows, as you can use diverse actions already made by the community and combine them using diverse events to trigger them too.<br/>
+But you have to be careful with this, because this combinations can make it all go wrong too.
+<h4>Some uses we can give it could be:</h4>
+- Compress folders or files<br/>
+- Change the README version<br/>
+- Upload a Realease<br/>
+- etc.. the limit is up to you!!<br/>
+<h2>Sources</h2>
+<a href="https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions">https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions</a><br/>
+<a href="https://github.com/actions/starter-workflows/issues/53">https://github.com/actions/starter-workflows/issues/53</a> (!)<br/>
+<a href="https://www.jetbrains.com/help/clion/cmakelists-txt-file.html">https://www.jetbrains.com/help/clion/cmakelists-txt-file.html</a> (!)<br/>
+<a href="http://www.cplusplus.com/articles/jTbCpfjN/">http://www.cplusplus.com/articles/jTbCpfjN/</a><br/>
+<a href="https://medium.com/coding-blocks/make-and-cmake-automating-c-build-process-900f569a75db">https://medium.com/coding-blocks/make-and-cmake-automating-c-build-process-900f569a75db</a><br/>
+<a href="https://developer.github.com/webhooks/">https://developer.github.com/webhooks/</a><br/>
+<a href="https://cristianadam.eu/20191222/using-github-actions-with-c-plus-plus-and-cmake/">https://cristianadam.eu/20191222/using-github-actions-with-c-plus-plus-and-cmake/</a><br/>
+<a href="https://cmake.org/">https://cmake.org/</a><br/>
+<a href="https://github.community/t5/GitHub-Actions/Github-Actions-drawbacks-when-building-C-client-applications/td-p/37681#">https://github.community/t5/GitHub-Actions/Github-Actions-drawbacks-when-building-C-client-applications/td-p/37681#</a><br/>
+<h2>Contact</h2>
+email: <a href = "mailto: pgalmor@gmail.com">pgalmor@gmail.com</a><br/>
+GitHub: <a href="https://github.com/pgalmor">pgalmor</a><br/>
